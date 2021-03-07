@@ -1,0 +1,43 @@
+div {
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+div:hover {
+    border: 5px solid black;
+    border-color: rgb(102, 39, 175);
+}
+
+div:nth-child(3) {
+    background-color: blue;
+    color: white;
+    font-style: italic;
+}
+
+div:nth-child(4) {
+    background-color: orange;
+    color: rgb(150, 1, 150);
+    
+}
+
+div:nth-child(5) {
+    background-color: brown;
+    padding: 5px 0 5px ;
+    color: rgb(219, 201, 35);
+    font-style: italic;
+}
+
+div:nth-child(6) {
+    background-color: darkgray;
+    color: lavender;
+}
+
+div:nth-child(7) {
+    background-color: lightgrey;
+    color: black;
+    font-style: italic;
+}
+
+
+    

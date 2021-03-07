@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(88, 88, 88);
+}
+
+h1, p {
+    text-align: center;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+li {
+    background-color: rgb(23, 23, 161);
+    color: white;
+    margin: 10px;
+    width: 350px;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+li:hover {
+    background-color: #e21f1f;
+}
+
+li:active {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
