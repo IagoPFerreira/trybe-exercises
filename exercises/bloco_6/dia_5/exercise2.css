@@ -1,0 +1,23 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: darkcyan;
+}
+
+header p {
+  font-size: 25pt;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 18pt;
+}
+
+ul li {
+  font-size: 14pt;
+}
