@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículo</title>
+</head>
+
+<body>
+  <form action="GET">
+    <div>
+      <fieldset>
+        <label for="nome">Digite seu nome:
+          <input type="text" id="nome" maxlength="40" placeholder="max. 40 caracteres" required>
+        </label>
+        <br>
+        <label for="email">Digite seu email:
+          <input type="email" id="email" maxlength="50" placeholder="max. 50 caracteres" required>
+        </label>
+        <br>
+        <label for="cpf">Digite seu CPF:
+          <input type="text" id="cpf" maxlength="11" placeholder="Somente os números" required>
+        </label>
+        <br>
+        <label for="endereco">Digite seu endereco:
+          <input type="text" id="endereco" maxlength="200" placeholder="max. 200 caracteres" required>
+        </label>
+        <br>
+        <label for="cidade">Digite sua cidade:
+          <input type="text" id="cidade" maxlength="28" placeholder="max. 28 caracteres" required>
+        </label>
+        <br>
+        <div>Estado
+          <select name="estados" id="box-estadosBrasileiros" required></select>
+        </div>
+        <div>Locatário:
+          <br>
+          <label for="casa">Casa
+            <input type="radio" name="locatario" id="casa" value="casa" required>
+          </label>
+          <label for="apartamento">Apartamento
+            <input type="radio" name="locatario" id="apartamento" value="apartamento" required>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <p>Resumo do currículo:</p>
+        <textarea name="resume" id="resume" maxlength="1000" required cols="30" rows="10"></textarea>
+        <br>
+        <label for="cargo">Cargo:
+          <input type="text" name="cargo" maxlength="40" id="cargo" required>
+        </label>
+
+        <label for="description">Descrição do cargo:
+          <input type="text" name="description" id="description" maxlength="500" required>
+        </label>
+
+        <label for="inicialDay">Data de início:
+          <input type="text" name="inicialDay" id="inicialDay" placeholder="dd/mm/aaaa" required>
+        </label>
+      </fieldset>
+      <button class="submit-button" type="submit">Enviar</button>
+      <button class="clear-button" type="reset">Limpar</button>
+    </div>
+  </form>
+  <section class="form-data"></section>
+  <script src="script.js"></script>
+</body>
+
+</html>
