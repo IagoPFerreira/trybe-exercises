@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículo</title>
+  <link rel="stylesheet" href="/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <form action="GET">
+    <div>
+      <fieldset>
+        <label for="nome" class="label">Digite seu nome:
+          <input type="text" maxlength="40" placeholder="max. 40 caracteres" id="nome" class="input" required>
+        </label>
+        <br>
+        <label for="email" class="label">Digite seu email:
+          <input type="email" maxlength="50" placeholder="max. 50 caracteres" id="email" class="input" required>
+        </label>
+        <br>
+        <label for="cpf" class="label">Digite seu CPF:
+          <input type="text" maxlength="11" placeholder="Somente os números" id="cpf" class="input" required>
+        </label>
+        <br>
+        <label for="endereco" class="label">Digite seu endereco:
+          <input type="text" maxlength="200" placeholder="max. 200 caracteres" id="endereco" class="input" required>
+        </label>
+        <br>
+        <label for="cidade" class="label">Digite sua cidade:
+          <input type="text" maxlength="28" placeholder="max. 28 caracteres" id="cidade" class="input" required>
+        </label>
+        <br>
+        <div >
+          <label for="" id="estados-label" class="label">Estado</label>
+            <div class="select is-primary">
+              <select name="estados" id="box-estadosBrasileiros" required></select>
+            </div>
+        </div>
+        <div id="locatario-container" class="label box">Locatário:
+          <div id="locatario">
+            <br>
+            <label for="casa" class="radio">Casa
+              <input type="radio" name="locatario" value="casa" id="casa" required>
+            </label>
+            <label for="apartamento" class="radio">Apartamento
+              <input type="radio" name="locatario" value="apartamento" id="apartamento" required>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <p class="label">Resumo do currículo:</p>
+        <textarea name="resume" maxlength="1000" required cols="30" rows="10" id="resume" class="textarea"></textarea>
+        <br>
+        <label for="cargo" class="label">Cargo:
+          <input type="text" name="cargo" maxlength="40" id="cargo" class="input" required>
+        </label>
+
+        <label for="description" class="label">Descrição do cargo:
+          <input type="text" name="description" maxlength="500" id="description" class="input" required>
+        </label>
+
+        <label for="inicialDay" class="label">Data de início:
+          <input type="text" name="inicialDay" placeholder="dd/mm/aaaa" id="inicialDay" class="input" required>
+        </label>
+      </fieldset>
+      <div id="form-buttons" class="is-grouped">
+        <button type="submit" class="submit-button button is-success is-medium">Enviar</button>
+        <button type="reset" class="clear-button button is-danger is-medium">Limpar</button>
+      </div>
+    </div>
+  </form>
+  <section class="form-data"></section>
+  <script src="script.js"></script>
+</body>
+
+</html>
