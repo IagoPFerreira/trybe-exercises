@@ -1,0 +1,36 @@
+body {
+  background-color: whitesmoke;
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  padding: 2% 5%;
+}
+
+.label {
+  font-size: 14pt;
+}
+
+#box-estadosBrasileiros {
+  display: block;
+}
+
+#locatario {
+  display: flex;
+}
+
+#locatario-container {
+  margin: 2% 0;
+}
+
+.radio {
+  font-weight: normal;
+  font-size: 14pt;
+  margin: 1% 2% 0 0;
+}
+
+.submit-button, .clear-button {
+  margin-top: 2%;
+  margin-right: 5%;
+}
