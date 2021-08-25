@@ -1,0 +1,4 @@
+SELECT * FROM sakila.rental LIMIT 10 OFFSET 5;
+SELECT * FROM sakila.rental LIMIT 15 OFFSET 6;
+SELECT * FROM sakila.rental LIMIT 1 OFFSET 5;
+SELECT * FROM sakila.rental LIMIT 10 OFFSET 4;
