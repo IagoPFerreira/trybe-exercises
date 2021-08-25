@@ -1,0 +1,18 @@
+.currentPokemon {
+  /* border: 2px solid rgb(117, 117, 117);
+  width: 48%;
+  display: flex;
+  border-radius: 4%;
+  flex-wrap: wrap;
+  background-color: rgba(228, 228, 228, 0.589);
+  margin: 1% 0; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1 1 auto;
+  min-width: 25%;
+  margin: 10px 10px;
+  border: 1px gray solid;
+  border-radius: 10px;
+  background: linear-gradient(#d51313b6, #b4b4b4a6);
+}
