@@ -1,0 +1,19 @@
+use('agg_example');
+
+// db.transactions.aggregate([
+//   { $match: { from: "Dave America" } }
+// ]);
+
+// db.transactions.aggregate([
+//   { $match: {
+//       $and: [
+//         { to: "Lisa Simpson" },
+//         { value: { $gte: 700, $lte: 6000 } }
+//       ] }
+//   }
+// ]);
+
+db.transactions.aggregate([
+  { $match: { value: { $gt: 1000 } } },
+  { $limit: 3 }
+]);
