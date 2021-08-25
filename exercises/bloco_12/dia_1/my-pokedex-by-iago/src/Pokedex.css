@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.Pokedex-title {
+  color: rgba(241, 241, 241, 0.897);
+  font-size: 28pt;
+}
+
+.PokemonCard {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin: 0;
+  align-self: center;
+  flex-wrap: wrap;
+}

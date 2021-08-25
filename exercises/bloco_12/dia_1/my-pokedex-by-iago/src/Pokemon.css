@@ -1,0 +1,9 @@
+.currentPokemon {
+  border: 2px solid rgb(117, 117, 117);
+  width: 48%;
+  display: flex;
+  border-radius: 4%;
+  flex-wrap: wrap;
+  background-color: rgba(228, 228, 228, 0.589);
+  margin: 1% 0;
+}
