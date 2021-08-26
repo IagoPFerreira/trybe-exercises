@@ -1,0 +1,13 @@
+{
+  "name": "iniciando_o_npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha tests"
+  },
+  "keywords": [],
+  "author": "Iago",
+  "license": "ISC"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "exercises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "index": "node index.js",
+    "asyncAwait": "node async_await.js"
+  },
+  "keywords": [],
+  "author": "Iago",
+  "license": "ISC"
+}

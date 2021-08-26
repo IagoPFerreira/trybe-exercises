@@ -16,3 +16,6 @@ function highestCount(list) {
   return count;
 }
 console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
+
+const header = document.getElementsByTagName('header');
+console.log(header);
