@@ -11,4 +11,12 @@ app.post('/hello', (req, res) => {
   res.status(200).json({ message: `Hello, ${name}!`})
 });
 
+app.post('/greetings', (req, res) => {
+  const { name, age } = req.body;
+
+  if (age < 17) return res.status(401).json({ "message": "Unauthorized" })
+
+  res.status(200).json({ message: `Hello, ${name}`})
+})
+
 app.listen(3000, () => console.log('O pai ta on na 3000'))
