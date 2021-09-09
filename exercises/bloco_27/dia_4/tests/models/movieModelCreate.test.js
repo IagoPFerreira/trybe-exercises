@@ -1,5 +1,7 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
+const { MongoClient } = require('mongodb');
+const { MongoMemoryServer } = require('mongodb-memory-server');
 
 const mongoConnection = require('../../models/connection');
 const MoviesModel = require('../../models/movieModel');
@@ -12,14 +14,15 @@ describe('Insere um novo filme no BD', () => {
     releaseYear: 1999,
   };
 
-  before(() => {
-    const ID_EXAMPLE = '604cb554311d68f491ba5781';
-    const insertOne = async () => ({ insertedId: ID_EXAMPLE });
-    const collection = async () => ({ insertOne });
-    const db = async (databaseName) => ({ collection });
-    const getConnectionMock = async () => ({ db });
+  before(async () => {
+    const DBServer = new MongoMemoryServer();
+    const URLMock = await DBServer.getUri();
 
-    connectionMock = getConnectionMock()
+    connectionMock = await MongoClient
+      .connect(URLMock, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+      })
       .then((conn) => conn.db('model_example'));
 
     sinon.stub(mongoConnection, 'getConnection').resolves(connectionMock);
@@ -40,6 +43,12 @@ describe('Insere um novo filme no BD', () => {
       const response = await MoviesModel.create(payloadMovie);
 
       expect(response).to.have.a.property('id');
+    });
+
+    it('deve existir um filme com o título cadastrado!', async () => {
+      await MoviesModel.create(payloadMovie);
+      const movieCreated = await connectionMock.collection('movies').findOne({ title: payloadMovie.title });
+      expect(movieCreated).to.be.not.null;
     });
   });
 });
