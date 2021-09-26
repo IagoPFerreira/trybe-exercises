@@ -1,38 +1,41 @@
-const  Joi = require('joi');
 const jwt = require('jsonwebtoken');
+const Joi = require('joi');
 
-const { JWT_SECRET } = process.env;
+const SECRET = process.env.SECRET;
 
-const validateBody = (body) => {
-  return Joi.object({
-    username: Joi.string().min(5).alphanum().required(),
-    password: Joi.string().min(5).required(),
-  }).validate(body);
-};
+const validateBody = (body) => Joi.object({
+  username: Joi.string().min(5).alphanum().required(),
+  password: Joi.string().min(5).required(),
+}).validate(body);
 
-module.exports = async (req, res, next) => {
+module.exports = (req, res, next) => {
+  try {
+  const { username, password } = req.body;
+
+  if (!username || !password) {
+    return res.status(401).json({ message: 'Os campos de usuário e senha precisam ser preenchidos!'});
+  }
+
   const { error } = validateBody(req.body);
 
   if (error) return next(error);
 
-  const { username, password } = req.body;
-
-  if (username !== 'admin' && password !== 's3nh4S3gur4???') {
-    const error = new Error('Invalid name or password');
-
-    error.statusCode = 401
-
-    next(error);
+  const jwtConfig = {
+    expiresIn: '1h',
+    algorithm: 'HS256'
   }
 
-  const admin = username === 'admin' && password === 's3nh4S3gur4???'
+  let admin = false;
 
-  const payload = {
-    username: req.body.username,
-    admin,
-  };
+  if (username === 'admin') {
+    admin = true;
+  }
 
-  const token = jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' });
+  const token = jwt.sign({ user: username, admin }, SECRET, jwtConfig);
 
-  res.status(200).json({ token });
-};
+  return res.status(200).json({ token });
+
+  } catch (err) {
+    return res.status(404).json({ message: 'Erro interno', error: err.message })
+  }
+}

@@ -1,9 +1,9 @@
 const ping = require('./ping');
 const login = require('./login');
-const me = require('./me');
+const getUsers = require('./getUsers');
 
 module.exports = {
   ping,
   login,
-  me,
+  getUsers,
 };

@@ -7,6 +7,7 @@ const { PORT } = process.env;
 
 const controllers = require('./controllers');
 const middlewares = require('./middlewares');
+const auth = require('./auth/validateJWT');
 
 const app = express();
 
@@ -23,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/ping', controllers.ping);
 app.post('/login', controllers.login);
-app.get('users/me', controllers.me);
+app.get('/users/me', auth, controllers.getUsers);
 
 app.use(middlewares.error);
 
